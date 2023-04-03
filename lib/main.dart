@@ -1,19 +1,25 @@
 import 'dart:async';
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:expense_pro/core/presentation/pages/add_new_wallet.dart';
-import 'package:expense_pro/core/presentation/pages/lock.dart';
-import 'package:expense_pro/core/presentation/pages/login.dart';
-import 'package:expense_pro/core/presentation/pages/onboard.dart';
-import 'package:expense_pro/core/presentation/pages/sign_up.dart';
-import 'package:expense_pro/core/presentation/pages/verification.dart';
-import 'package:expense_pro/core/presentation/res/colors.dart';
-import 'package:expense_pro/core/presentation/res/text.dart';
+import 'package:expense_pro/presentation/pages/add_new_wallet.dart';
+import 'package:expense_pro/presentation/pages/home.dart';
+import 'package:expense_pro/presentation/pages/lock.dart';
+import 'package:expense_pro/presentation/pages/login.dart';
+import 'package:expense_pro/presentation/pages/notification.dart';
+import 'package:expense_pro/presentation/pages/onboard.dart';
+import 'package:expense_pro/presentation/pages/sign_up.dart';
+import 'package:expense_pro/presentation/pages/verification.dart';
+import 'package:expense_pro/res/app_colors.dart';
+import 'package:expense_pro/res/app_styles.dart';
+import 'package:expense_pro/res/app_text.dart';
+import 'package:expense_pro/res/app_text_style.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:expense_pro/core/presentation/pages/splash.dart';
+import 'package:expense_pro/presentation/pages/splash.dart';
+
+import 'presentation/wrapper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -58,36 +64,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: AppText.appName,
-      theme: ThemeData(
-        scaffoldBackgroundColor: AppColor.light80,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: AppColor.light80,
-          elevation: 0.0,
-        ),
-        textTheme: const TextTheme(),
-        inputDecorationTheme: InputDecorationTheme(
-          focusColor: AppColor.violet100,
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16.0),
-            borderSide: const BorderSide(
-              color: AppColor.violet100,
-              width: 2.0,
-            ),
-          ),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16.0),
-          ),
-        ),
-        buttonTheme: ButtonThemeData(
-          minWidth: double.infinity,
-          splashColor: AppColor.violet100,
-          buttonColor: AppColor.violet100,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.0),
-          ),
-        ),
-        primaryColor: AppColor.violet100,
-      ),
+      theme: AppTheme.appTheme,
       routes: <String, WidgetBuilder>{
         SplashPage.route: (context) => const SplashPage(),
         LoginPage.route: (context) => const LoginPage(),
