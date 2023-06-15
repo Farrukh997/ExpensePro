@@ -1,4 +1,5 @@
 import 'package:expense_pro/models/transaction.dart';
+import 'package:expense_pro/presentation/utils/utils.dart';
 import 'package:expense_pro/res/app_assets.dart';
 import 'package:expense_pro/res/app_colors.dart';
 import 'package:expense_pro/res/app_text_style.dart';
@@ -54,7 +55,7 @@ class TransactionListItem extends StatelessWidget {
                     SizedBox(
                       width: 300.w,
                       child: Text(
-                        item.title,
+                        item.category.name.startWithCapital(),
                         maxLines: 1,
                         softWrap: false,
                         style: AppTextStyle.titleSmallBold,

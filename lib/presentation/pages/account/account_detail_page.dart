@@ -1,5 +1,5 @@
 import 'package:expense_pro/models/account.dart';
-import 'package:expense_pro/models/transaction.dart';
+import 'package:expense_pro/models/transaction.dart' as app;
 import 'package:expense_pro/presentation/components/cards/transaction_card.dart';
 import 'package:expense_pro/presentation/components/icons/edit_icon.dart';
 import 'package:expense_pro/presentation/components/icons/nav_left_icon.dart';
@@ -17,14 +17,6 @@ class AccountEditPage extends StatelessWidget {
   const AccountEditPage({super.key, required this.account});
 
   final Account account;
-
-  List<Transaction> getTransactions() {
-    List<Transaction> transactionList = [];
-    for (var element in transactions) {
-      transactionList.add(Transaction.fromJson(element));
-    }
-    return transactionList;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,15 +89,23 @@ class AccountEditPage extends StatelessWidget {
                 top: 16.0,
                 right: 24.0,
               ),
-              itemBuilder: (context, Transaction item) {
+              itemBuilder: (context, app.Transaction item) {
                 return TransactionListItem(item: item);
               },
-              groupHeaderBuilder: (Transaction element) => Text(
+              groupHeaderBuilder: (app.Transaction element) => Text(
                 '${getMonth(element.time.month, context)} ${element.time.day} ${element.time.year}',
                 style: AppTextStyle.bodyLarge,
               ),
-              elements: getTransactions(),
-              groupBy: (Transaction element) {
+              elements: const <app.Transaction>[],
+              //     FirebaseFirestore.instance.collection('transcations').withConverter(
+              //   fromFirestore: (snapshot, options) {
+              //     return app.Transaction.fromJson(snapshot.data());
+              //   },
+              //   toFirestore: (app.Transaction value, options) {
+              //     return value.toJson();
+              //   },
+              // ),
+              groupBy: (app.Transaction element) {
                 return element.time;
               },
             ),

@@ -1,5 +1,4 @@
 import 'package:expense_pro/models/account.dart';
-import 'package:expense_pro/models/transaction.dart';
 import 'package:expense_pro/presentation/components/buttons/primary_button.dart';
 import 'package:expense_pro/presentation/components/icons/nav_left_icon.dart';
 import 'package:expense_pro/presentation/components/icons/wallet_icon.dart';

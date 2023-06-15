@@ -25,7 +25,6 @@ class FinancialReportPage extends StatefulWidget {
 }
 
 class _FinancialReportPageState extends State<FinancialReportPage> {
-  // var _value;
   List<Transaction> transaction = [];
 
   List<Color> gradientColors = [
@@ -38,19 +37,10 @@ class _FinancialReportPageState extends State<FinancialReportPage> {
 
   Date? _byDate;
 
-  List<Transaction> getTransactions() {
-    List<Transaction> trans = [];
-    for (var item in transactions) {
-      trans.add(Transaction.fromJson(item));
-    }
-    return trans;
-  }
-
   void _sortTransactions() {}
 
   @override
   void initState() {
-    transaction = getTransactions();
     super.initState();
   }
 

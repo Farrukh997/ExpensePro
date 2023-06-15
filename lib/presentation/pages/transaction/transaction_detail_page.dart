@@ -192,7 +192,7 @@ class DetailsTopPart extends StatelessWidget {
                 ),
               ),
               Text(
-                transaction.title,
+                'Buy ${transaction.category.name}',
                 style: AppTextStyle.titleSmall.copyWith(
                   color: AppColors.light100,
                 ),

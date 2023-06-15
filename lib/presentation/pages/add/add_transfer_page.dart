@@ -157,14 +157,14 @@ class _AddTransferPageState extends State<AddTransferPage> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 12.0,
                               ),
                               Expanded(
                                 child: TextField(
                                   decoration: InputDecoration(
                                     hintText: AppLocalizations.of(context)?.from ?? '',
-                                    contentPadding: EdgeInsets.only(
+                                    contentPadding: const EdgeInsets.only(
                                       left: 24.0,
                                       top: 24.0,
                                       right: 12,

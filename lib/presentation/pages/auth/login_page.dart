@@ -4,7 +4,6 @@ import 'package:expense_pro/presentation/pages/auth/verification_page.dart';
 import 'package:expense_pro/presentation/utils/input_formatter.dart';
 import 'package:expense_pro/res/app_colors.dart';
 import 'package:expense_pro/res/app_text_style.dart';
-import 'package:expense_pro/service/auth_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

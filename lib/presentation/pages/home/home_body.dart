@@ -1,4 +1,3 @@
-import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
 import 'package:expense_pro/models/account.dart';
 import 'package:expense_pro/models/transaction.dart';
 import 'package:expense_pro/presentation/components/buttons/text_button.dart';
@@ -51,14 +50,6 @@ class _HomePageState extends State<HomePage> {
     'December'
   ];
 
-  List<Transaction> getTransactions() {
-    List<Transaction> transactionList = [];
-    for (var element in transactions) {
-      transactionList.add(Transaction.fromJson(element));
-    }
-    return transactionList;
-  }
-
   List<Color> gradientColors = [
     const Color(0x3d8b50ff),
     AppColors.light100,
@@ -69,7 +60,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    setState(() => data = getTransactions());
     _dropDownValue = 'January';
     super.initState();
   }
@@ -225,20 +215,12 @@ class _HomePageState extends State<HomePage> {
             transactionChanged: (int value) {
               switch (value) {
                 case 0:
-                  var tempo = getTransactions();
-                  setState(() => data = tempo);
                   break;
                 case 1:
-                  var tempo = getTransactions();
-                  setState(() => data = tempo.take(6).toList());
                   break;
                 case 2:
-                  var tempo = getTransactions();
-                  setState(() => data = tempo.take(12).toList());
                   break;
                 case 3:
-                  var tempo = getTransactions();
-                  setState(() => data = tempo.take(3).toList());
                   break;
                 default:
                   break;

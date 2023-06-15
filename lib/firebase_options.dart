@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,6 +43,16 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAbu1BZvEtO-5AHhABUot9tNkh68kk5Pm0',
+    appId: '1:267281332935:web:06158fe36d21202ce31ce2',
+    messagingSenderId: '267281332935',
+    projectId: 'expensepro-efd45',
+    authDomain: 'expensepro-efd45.firebaseapp.com',
+    storageBucket: 'expensepro-efd45.appspot.com',
+    measurementId: 'G-587FX3H55D',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAgzD4zxvv0jlpOcpC8hiMAOuVfud-pF_U',
     appId: '1:267281332935:android:c77537de0cddabd9e31ce2',
@@ -63,6 +67,18 @@ class DefaultFirebaseOptions {
     messagingSenderId: '267281332935',
     projectId: 'expensepro-efd45',
     storageBucket: 'expensepro-efd45.appspot.com',
+    androidClientId: '267281332935-7oa5vp8ur3hesko66t37c2jj047qq6n8.apps.googleusercontent.com',
+    iosClientId: '267281332935-davio3o5m799cek065urh5mdc9rl3gu8.apps.googleusercontent.com',
+    iosBundleId: 'com.example.expensePro',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBoQn8XwHpRUdBqr-UYNDjIfimC4Zipo4g',
+    appId: '1:267281332935:ios:50f4b71878e0fc8ae31ce2',
+    messagingSenderId: '267281332935',
+    projectId: 'expensepro-efd45',
+    storageBucket: 'expensepro-efd45.appspot.com',
+    androidClientId: '267281332935-7oa5vp8ur3hesko66t37c2jj047qq6n8.apps.googleusercontent.com',
     iosClientId: '267281332935-davio3o5m799cek065urh5mdc9rl3gu8.apps.googleusercontent.com',
     iosBundleId: 'com.example.expensePro',
   );

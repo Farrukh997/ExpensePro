@@ -18,8 +18,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-extension on String {}
-
 Future<void> onMessage(RemoteMessage message) async {
   var db = FirebaseFirestore.instance;
   db.collection('notifications').add(message.data);

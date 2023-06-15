@@ -12,7 +12,7 @@ import 'package:expense_pro/presentation/utils/utils.dart';
 import 'package:expense_pro/res/app_colors.dart';
 import 'package:expense_pro/res/app_text_style.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:expense_pro/models/transaction.dart' as app;
+import 'package:expense_pro/models/transaction.dart' as t;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -27,7 +27,7 @@ class AddExpensePage extends StatefulWidget {
 class _AddExpensePageState extends State<AddExpensePage> {
   final textController = TextEditingController();
   late ExpenseCategory selectedCategory;
-  late Account accountType;
+  late Account account;
   bool _repeat = false;
   double? _expenseValue;
 
@@ -52,7 +52,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
   @override
   void initState() {
     super.initState();
-    accountType = AccountType.bank;
+    account = Account(0, AccountType.bank, 'Chase');
     selectedCategory = ExpenseCategory.food;
   }
 
@@ -176,14 +176,14 @@ class _AddExpensePageState extends State<AddExpensePage> {
                       ),
                       iconDisabledColor: AppColors.light20,
                       value: account,
-                      items: Account.values
-                          .map((e) => DropdownMenuItem(
-                                value: e,
-                                child: Text(e.name.startWithCapital()),
-                              ))
-                          .toList(),
+                      items: [
+                        DropdownMenuItem(
+                          value: Account(0, AccountType.bank, 'chase'),
+                          child: Text('asd'),
+                        ),
+                      ],
                       onChanged: (value) {
-                        if (value != null) accountType = value;
+                        if (value != null) account = value;
                       },
                     ),
                     const SizedBox(
@@ -256,17 +256,17 @@ class _AddExpensePageState extends State<AddExpensePage> {
                     ),
                     PrimaryButton(
                       onPressed: () {
-                        final transaction = app.Transaction(
-                            description: description,
-                            type: TransactionType.expense,
-                            category: selectedCategory,
-                            time: DateTime.now(),
-                            amount: _expenseValue,
-                            account: account);
-                        FirebaseFirestore.instance
-                            .collection('transactions')
-                            .add(app.Transaction());
-                        // Navigator.pop(context);
+                        final transaction = t.Transaction(
+                          description: description,
+                          type: TransactionType.expense,
+                          category: selectedCategory,
+                          time: DateTime.now(),
+                          amount: _expenseValue ?? 0.0,
+                          account: account,
+                          attachment: '',
+                        );
+                        // FirebaseFirestore.instance.collection('transactions').add(app.Transaction());
+                        Navigator.pop(context);
                       },
                       text: AppLocalizations.of(context)?.contin ?? '',
                     ),

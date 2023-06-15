@@ -182,7 +182,6 @@ class _TransactionPageState extends State<TransactionPage> {
                       .map((e) => app.Transaction(
                             id: e['id'],
                             account: e['account'],
-                            title: e['title'],
                             description: e['description'],
                             type: e['type'],
                             category: e['category'],
