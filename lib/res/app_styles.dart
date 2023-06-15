@@ -4,13 +4,15 @@ import 'package:flutter/material.dart';
 
 abstract class AppTheme {
   static ThemeData get appTheme => ThemeData(
-        scaffoldBackgroundColor: AppColors.light80,
+        scaffoldBackgroundColor: AppColors.light100,
         appBarTheme: AppBarTheme(
+          centerTitle: true,
+          backgroundColor: AppColors.light100,
           elevation: 0.0,
           iconTheme: const IconThemeData(
             color: AppColors.light100,
           ),
-          titleTextStyle: AppTextStyle.title3.copyWith(
+          titleTextStyle: AppTextStyle.titleSmallBold.copyWith(
             color: AppColors.light100,
           ),
           actionsIconTheme: const IconThemeData(
@@ -24,15 +26,20 @@ abstract class AppTheme {
             borderRadius: BorderRadius.circular(16.0),
             borderSide: const BorderSide(
               color: AppColors.violet100,
-              width: 2.0,
+              width: 1.0,
             ),
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.0),
+            borderSide: const BorderSide(
+              color: AppColors.light60,
+              width: 1.0,
+            ),
           ),
         ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: AppColors.violet100,
+          iconSize: 24.0,
         ),
         buttonTheme: ButtonThemeData(
           minWidth: double.infinity,

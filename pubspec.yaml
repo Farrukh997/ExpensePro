@@ -4,13 +4,12 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.19.4 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  easy_localization: ^3.0.1
   equatable: ^2.0.5
   google_fonts: ^4.0.3
   flutter_svg: ^2.0.4
@@ -25,6 +24,23 @@ dependencies:
   cloud_firestore: ^4.4.5
   firebase_ui_firestore: ^1.2.10
   fl_chart: ^0.61.0
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  path_drawing: ^1.0.1
+  flutter_screenutil: ^5.7.0
+  responsiveness: ^1.2.7
+  grouped_list: ^5.1.2
+  story: ^1.0.0+1
+  image_picker: ^0.8.7+5
+  file_picker: ^5.3.0
+  firebase_messaging: ^14.6.1
+  cloud_firestore_odm: ^1.0.0-dev.59
+  pin_input_text_field: ^4.5.0
+  firebase_storage: ^11.2.2
+  go_router: ^7.1.1
+  local_auth: ^2.1.6
+  otp_autofill: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -32,30 +48,111 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   freezed: ^2.3.2
   build_runner: ^2.3.3
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/wallet.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
 
 flutter:
+  generate: true
   uses-material-design: true
   assets:
     - assets/images/
   fonts:
+    - family: Attachment
+      fonts:
+        - asset: assets/fonts/Attachment.ttf
+    - family: ArrowDown
+      fonts:
+        - asset: assets/fonts/ArrowDown.ttf
+    - family: ArrowRight
+      fonts:
+        - asset: assets/fonts/ArrowRight.ttf
+    - family: ArrowLeft
+      fonts:
+        - asset: assets/fonts/ArrowLeft.ttf
+    - family: NavLeft
+      fonts:
+        - asset: assets/fonts/NavLeft.ttf
+    - family: CarIcon
+      fonts:
+        - asset: assets/fonts/CarIcon.ttf
+    - family: EditIcon
+      fonts:
+        - asset: assets/fonts/EditIcon.ttf
     - family: ExchangeIcon
       fonts:
         - asset: assets/fonts/ExchangeIcon.ttf
     - family: ExpenseIcon
       fonts:
         - asset: assets/fonts/ExpenseIcon.ttf
+    - family: FoodIcon
+      fonts:
+        - asset: assets/fonts/FoodIcon.ttf
     - family: HomeIcon
       fonts:
         - asset: assets/fonts/HomeIcon.ttf
     - family: IncomeIcon
       fonts:
         - asset: assets/fonts/IncomeIcon.ttf
+    - family: LogoutIcon
+      fonts:
+        - asset: assets/fonts/LogoutIcon.ttf
+    - family: NotificationIcon
+      fonts:
+        - asset: assets/fonts/NotificationIcon.ttf
     - family: PieChartIcon
       fonts:
         - asset: assets/fonts/PieChartIcon.ttf
+    - family: RecurringBillIcon
+      fonts:
+        - asset: assets/fonts/RecurringBillIcon.ttf
+    - family: SalaryIcon
+      fonts:
+        - asset: assets/fonts/SalaryIcon.ttf
+    - family: SettingIcon
+      fonts:
+        - asset: assets/fonts/SettingIcon.ttf
+    - family: ShoppingIcon
+      fonts:
+        - asset: assets/fonts/ShoppingIcon.ttf
+    - family: SortIcon
+      fonts:
+        - asset: assets/fonts/SortIcon.ttf
+    - family: SuccessIcon
+      fonts:
+        - asset: assets/fonts/SuccessIcon.ttf
     - family: TransactionIcon
       fonts:
         - asset: assets/fonts/TransactionIcon.ttf
+    - family: TrashIcon
+      fonts:
+        - asset: assets/fonts/TrashIcon.ttf
+    - family: UploadIcon
+      fonts:
+        - asset: assets/fonts/UploadIcon.ttf
     - family: UserIcon
       fonts:
         - asset: assets/fonts/UserIcon.ttf
+    - family: WalletIcon
+      fonts:
+        - asset: assets/fonts/WalletIcon.ttf
+    - family: WarningIcon
+      fonts:
+        - asset: assets/fonts/WarningIcon.ttf
+    - family: Camera
+      fonts:
+        - asset: assets/fonts/Camera.ttf
+    - family: Gallery
+      fonts:
+        - asset: assets/fonts/Gallery.ttf
+    - family: File
+      fonts:
+        - asset: assets/fonts/File.ttf
+    - family: Sort
+      fonts:
+        - asset: assets/fonts/Sort.ttf

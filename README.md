@@ -1,4 +1,4 @@
-# expense_pro
+# ExpensePro
 
 A new Flutter project.
 
