@@ -2,15 +2,11 @@ import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
-import 'package:expense_pro/models/user.dart' as model;
 import 'package:flutter/material.dart';
 
 enum AuthStatus { authorized, notAuthorized }
 
 enum RequestStatus { successful, failure }
-
-model.User? _getUserFromFirebase(User? user) =>
-    user != null ? model.User(user.uid) : null;
 
 class AuthService {
   AuthService._internal();

@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:expense_pro/models/transaction.dart' as model;
+import 'package:expense_pro/domain/models/transaction.dart' as t;
 
 enum TransactionQuery { year, month, week, day }
 
@@ -13,18 +13,17 @@ enum TransactionQuery { year, month, week, day }
 //   }
 // }
 
-class FirestoreDb {
+class FirebaseCloudDB {
+  FirebaseCloudDB._internal();
+
+  static final instance = FirebaseCloudDB._internal();
+
   final db = FirebaseFirestore.instance;
 
-  FirestoreDb() {
-    db.enableNetwork();
-    db.settings.persistenceEnabled;
-  }
-
-  CollectionReference<model.Transaction> getTransactions() {
-    final data = db.collection('transactions').withConverter<model.Transaction>(
+  CollectionReference<t.Transaction> getTransactions() {
+    final data = db.collection('transactions').withConverter<t.Transaction>(
           fromFirestore: (snapshot, options) =>
-              model.Transaction.fromJson(snapshot.data()?[0]),
+              t.Transaction.fromJson(snapshot.data() ?? {}),
           toFirestore: (value, options) => value.toJson(),
         );
     return data;

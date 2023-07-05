@@ -22,7 +22,6 @@ dependencies:
   pinput: ^2.2.31
   pin_code_fields: ^7.4.0
   cloud_firestore: ^4.4.5
-  firebase_ui_firestore: ^1.2.10
   fl_chart: ^0.61.0
   flutter_localizations:
     sdk: flutter
@@ -41,6 +40,9 @@ dependencies:
   go_router: ^7.1.1
   local_auth: ^2.1.6
   otp_autofill: ^2.1.0
+  logging: ^1.2.0
+  logger: ^1.4.0
+  l: ^3.2.0
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +63,7 @@ flutter:
   generate: true
   uses-material-design: true
   assets:
+    - assets/
     - assets/images/
   fonts:
     - family: Attachment
@@ -156,3 +159,6 @@ flutter:
     - family: Sort
       fonts:
         - asset: assets/fonts/Sort.ttf
+    - family: ArrowForward
+      fonts:
+        - asset: assets/fonts/ArrowForward.ttf

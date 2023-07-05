@@ -1,9 +1,4 @@
 {
-  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  "dart.flutterSdkPath": "/Users/farrukh/fvm/versions/3.7.0",
   "java.configuration.updateBuildConfiguration": "interactive",
-  "editor.fontSize": 13,
-  "files.associations": {
-    "__config": "cpp",
-    "type_traits": "cpp"
-  }
 }
